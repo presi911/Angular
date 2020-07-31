@@ -1,0 +1,13 @@
+* src
+    *app
+        *order-details
+            --order-details.component.ts | .html | .css
+            * order-detail
+                --order-detail.component.ts | .html |.css
+            * order-detail-list
+                --order-detail-list.component.ts| .html | .css
+        *shared
+            --order-detail.service.ts
+            --order-detail.module.ts         
+    app.module.ts
+ index.html   

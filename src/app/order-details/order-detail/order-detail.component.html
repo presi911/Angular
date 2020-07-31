@@ -1,0 +1,74 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="PDId" [value]="service.formData.PDId">
+    <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-users" [class.green-icon]="Nombre.valid" [class.red-icon]="Nombre.invalid && Nombre.touched"></i>
+            </div>
+          </div>
+          <input name="Nombre" #Nombre="ngModel" [(ngModel)]="service.formData.Nombre" 
+          class="form-control" placeholder="Nombre o Compañia " required maxlength="16" >
+          </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-address-card"  [class.green-icon]="Nombre.valid" [class.red-icon]="Nombre.invalid && Nombre.touched"></i>
+            </div>
+          </div>
+          <input name="Id" #Id="ngModel" [(ngModel)]="service.formData.Id" 
+          class="form-control" placeholder="Cédula o NIT" required maxlength="16" minlength="8">
+        </div>
+      </div>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+            <i class="far fa-envelope" [class.green-icon]="Email.valid" [class.red-icon]="Email.invalid && Email.touched"></i>
+          </div>
+        </div>
+        <input type="email" name="Email" #Email="ngModel" [(ngModel)]="service.formData.Email" class="form-control"
+          placeholder="Email" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+            <i class="fas fa-map-marker-alt"  [class.green-icon]="DireccionEntrega.valid" [class.red-icon]="DireccionEntrega.invalid && DireccionEntrega.touched"></i>
+          </div>
+        </div>
+        <input name="DireccionEntrega" #DireccionEntrega="ngModel" [(ngModel)]="service.formData.DireccionEntrega" 
+        class="form-control" placeholder="Direccion de Entrega" required maxlength="50" minlength="16">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-7">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-phone-square"  [class.green-icon]="Telefono.valid" [class.red-icon]="Telefono.invalid && Telefono.touched"></i>
+            </div>
+          </div>
+          <input name="Telefono" #Telefono="ngModel" [(ngModel)]="service.formData.Telefono" class="form-control"
+            placeholder="Telefono" required maxlength="13" minlength="6">
+        </div>
+      </div>
+      <div class="form-group col-md-5">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+              <i class="fas fa-city"  [class.green-icon]="Ciudad.valid" [class.red-icon]="Ciudad.invalid && Ciudad.touched"></i>
+            </div>
+          </div>
+          <input name="Ciudad" #Ciudad="ngModel" [(ngModel)]="service.formData.Ciudad" class="form-control" placeholder="Ciudad"
+          required  maxlength="20" minlength="3">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i> Enviar</button>
+    </div>
+  </form>

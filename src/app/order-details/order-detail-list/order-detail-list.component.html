@@ -1,0 +1,13 @@
+<h6>Pedidos</h6>
+<table class="table table-hover">
+    <tr *ngFor= "let pd of service.list" >
+        <td>{{pd.PDId}}</td>
+        <td (click)="populateForm(pd)">{{pd.Nombre}}</td>
+        <td (click)="populateForm(pd)">{{pd.Email}}</td>
+        <td (click)="populateForm(pd)">{{pd.Direccion}}</td>
+        <td (click)="populateForm(pd)">{{pd.Telefono}}</td>
+        <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.PDId)"></i>
+          </td>
+    </tr>
+</table>
